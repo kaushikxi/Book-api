@@ -1,13 +1,13 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose= require('mongoose');
+
 
 //database
 const Database =require("./database");
 
-const MONGO_URI="mongodb+srv://kaushikxi:Kaushik24@bookapi.ehne8.mongodb.net/BookAPI?retryWrites=true&w=majority"; 
-
 mongoose.connect(
-    "mongodb+srv://kaushikxi:Kaushik24@bookapi.ehne8.mongodb.net/BookAPI?retryWrites=true&w=majority" ,
+    process.env.MONGO_URI,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
